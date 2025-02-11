@@ -1,0 +1,155 @@
+.discussion-container {
+  /* margin: 40px auto; */
+  width: 60%;
+  padding: 20px;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+
+/* Input field with send button */
+.input-container {
+  display: flex;
+  background: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--gray-border);
+}
+
+.input-container input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-text);
+  letter-spacing: 1px;
+  padding: 2px;
+  word-spacing: 1px;
+  font-size: 16px;
+}
+.input-container input::placeholder {
+  font-size: 13px;
+}
+
+.input-container button {
+  background: var(--primary-color);
+  color: var(--primary-text);
+  border: none;
+  outline: none;
+  padding: 9px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-container button:hover {
+  rotate: -45deg;
+}
+
+/* Message cards */
+.messages {
+  margin-top: 20px;
+}
+
+.message-card {
+  background: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  border: 2px solid var(--gray-border);
+}
+
+.message-card strong {
+  font-size: 14px;
+  color: var(--green-border);
+}
+
+.message-card p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+  .discussion-container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .message-card {
+    padding: 12px;
+  }
+
+  .input-container input {
+    font-size: 14px;
+  }
+}
+
+/* OTP input form */
+
+.otp-container {
+  text-align: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.otp-instruction {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.otp-input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  background: #f9f9f9;
+  font-weight: bold;
+}
+
+.otp-input:focus {
+  border-color: #007bff;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+.otp-submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.otp-submit:hover {
+  background-color: #0056b3;
+}
+
+.otp-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

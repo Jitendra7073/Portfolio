@@ -1,0 +1,87 @@
+.main_connect {
+  overflow-x: hidden;
+}
+.connect_section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+.connect_center_division {
+  padding: 20px;
+  width: 50%;
+  color: var(--primary-text);
+}
+
+.connect_center_division .Heading_connect {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.connect_description {
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+  text-align: center;
+}
+
+.connect_state {
+  text-align: left;
+  line-height: 25px;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+}
+.green_highlight {
+  color: var(--button-hover);
+  font-weight: 600;
+}
+.connect_link {
+  text-align: justify;
+  line-height: 25px;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+}
+.connect_link a{
+    color: var(--button-hover);
+    margin: 0 10px;
+    border-bottom: 2px solid var(--gray-border);
+}
+.connect_link a:hover{
+    border-bottom: 2px solid var(--green-border);
+}
+@media screen and (max-width:1000px){
+  .connect_center_division {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .connect_center_division {
+    width: 100%;
+  }
+  .connect_center_division .Heading_connect {
+    font-size: 45px;
+  }
+  .connect_description {
+    font-size: 15px;
+    text-align: justify;
+  }
+  .connect_state {
+    word-spacing: 0px;
+    line-height: 30px;
+    text-align: justify;
+  }
+  .green_highlight {
+    color: var(--green-border);
+  }
+  .reach_out_me{
+    line-height: 25px;
+  }
+
+}

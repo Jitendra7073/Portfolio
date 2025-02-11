@@ -1,0 +1,63 @@
+@import '../../common_css/Font/font.css';
+.Education_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  position: relative;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+.Education_content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.Education_data{
+    height: 200px;
+    margin: 10px 0;
+    width: 370px;
+    display: flex;
+    justify-content: center;
+}
+.background_images{
+    position: absolute;
+}
+.background_images img{
+    height: 230px;
+    width: auto;
+}
+.content_over_background{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.Education_Image{
+    height: 100px;
+    width: fit-content;
+}
+.Education_Image img{
+    object-fit:contain;
+    width: auto;
+    height: 55px;
+}
+.Education_details{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    padding: 0 20px;
+    line-height: 33px;
+    letter-spacing: 0.7px;
+    word-spacing: 1px;
+    color: var(--primary-text);
+    margin: 20px;
+}

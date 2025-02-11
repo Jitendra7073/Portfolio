@@ -1,0 +1,25 @@
+:root {
+  /* --background-color: #121212; */
+  --background-color: #0b0b0d;
+  --primary-color: #171717;
+  --secondry-color: #2e2e2e;
+
+  /* border colors */
+  --primary-border: #282828;
+  --division-border: #2e2e2e;
+  --green-border: #128353;
+  --gray-border: #363636;
+  --card-border: #282828;
+
+  /* text colors */
+  --primary-text: #fffaf0;
+  --gray-text: #5b5b5b;
+
+  /* button colors */
+  --button-background: #006239;
+  --button-background_gray: #242424;
+  --button-hover: #3ecf8e;
+
+  --title: #fff;
+  --subtitle: #fff;
+}

@@ -1,0 +1,115 @@
+/* Background Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: url("../../Images/cursor/close.png") 8 8, auto;
+}
+
+.popup-box {
+  height: auto;
+  width: 500px;
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid var(--green-border);
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+  line-height: 33px;
+  cursor: default;
+}
+.popup-box .popup-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.popup-box .popup-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+}
+.flex-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.popup-input {
+  border-radius: 10px;
+  border: 2px solid var(--gray-border);
+  background-color: var(--secondry-color);
+  height: 35px;
+  padding: 5px 10px;
+  color: var(--primary-text);
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+}
+.input_button_group {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.input_button_group input {
+  display: flex;
+  width: 100%;
+}
+.input_button_group .popup-button {
+  background: var(--button-background);
+  border: 2px solid var(--green-border);
+  border-radius: 10px;
+  width: 150px;
+  color: var(--primary-text);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 468px) {
+  .input_button_group {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .input_button_group input {
+    width: auto;
+  }
+  .input_button_group .popup-button {
+    width: 100%;
+    height: 45px;
+  }
+}
+
+.popup-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

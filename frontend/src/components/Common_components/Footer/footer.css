@@ -1,0 +1,107 @@
+@import "../../../assets/common_css/Font/font.css";
+.footer-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.tools-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tools List Styling */
+.tools-list {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Individual Tool */
+.tool-item {
+  list-style: none;
+  flex: 0 0 auto;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Tool Content */
+.tool-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+}
+
+/* Icons */
+.tool-icon {
+  height: 25px;
+  width: auto;
+  filter: grayscale(1);
+  transition: filter 0.2s ease-in-out;
+}
+.tool-item:hover .tool-icon {
+  filter: grayscale(0);
+}
+
+/* Tool Title */
+.tool-title {
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 16px;
+}
+.tool-item:hover .tool-title {
+  color: var(--green-border);
+}
+
+/* Fading Effect */
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Left Fade */
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+/* Right Fade */
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+.copy_rights {
+  font-family: "Inter", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-border);
+}
+
+@media screen and (max-width:568px) {
+ .footer-container{
+  display: none;
+ } 
+ .copy_rights {
+  font-size: 12px;
+  margin: 0 0 20px 0;
+  color: var(--gray-border);
+}
+}

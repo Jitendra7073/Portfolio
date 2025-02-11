@@ -1,0 +1,23 @@
+
+body {
+  padding: 0; 
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #0b0b0d;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  margin: 0 5px;
+}
+.Default_navbar{
+  position:relative;
+  width: 100%;
+  height: 80px;
+}
+
+@media (max-width:768px){
+  body {
+    margin: 0 5px;
+  }
+}

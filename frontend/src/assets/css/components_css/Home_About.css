@@ -1,0 +1,51 @@
+@import "../../common_css/Colors/colors.css";
+@import "../../common_css/Font/font.css";
+
+.About_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  position: relative;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+.hey_emoji {
+  font-size: 32px;
+}
+.About_section_heading {
+  color: var(--green-border);
+  font-size: 20px;
+  padding: 20px 0;
+}
+.About_section_heading_left {
+  text-align: left;
+}
+.About_section_heading_right {
+  text-align: right;
+}
+.About_section_heading span {
+  color: var(--primary-text);
+}
+.About_In_Details {
+  width: 70%;
+  line-height: 33px;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  color: var(--primary-text);
+}
+.About_In_Details p {
+  text-align: justify;
+}
+@media screen and (max-width: 1200px) {
+  .About_In_Details {
+    width: 100%;
+    line-height: 30px;
+  }
+  .About_In_Details p {
+    padding: 0 0;
+  }
+}

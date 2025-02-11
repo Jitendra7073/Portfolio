@@ -1,0 +1,235 @@
+@import "../../common_css/Colors/colors.css";
+@import "../../common_css/Font/font.css";
+
+.Hero_section_div {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+}
+.Hero_content_div {
+  text-align: center;
+  word-wrap: break-word;
+  padding: 20px;
+  margin-top: -7%;
+  width: 50%;
+  color: var(--primary-text);
+}
+.Developer_Name_div {
+  height: auto;
+}
+.Developer_Name_div .Name_content {
+  font-size: 80px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+/* discription */
+.Short_Discription_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-spacing: 1px;
+  margin: 20px 0;
+  line-height: 33px;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  color: var(--primary-text);
+}
+.Short_Discription_div .discription_content {
+  text-align: center;
+  width: 85%;
+}
+.High_Lighted_text {
+  color: var(--button-hover);
+}
+
+/* buttons */
+.Button_Group_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.Button_Group_div button {
+  height: 40px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  gap: 10px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  color: var(--primary-text);
+  cursor: pointer;
+}
+.Button_Group_div button .react_icons {
+  height: 20px;
+  width: 20px;
+}
+.Connect_button {
+  background-color: var(--button-background);
+  border: 2px solid var(--green-border);
+}
+.Resume_button {
+  background-color: var(--button-background_gray);
+  border: 2px solid var(--gray-border);
+}
+
+/* Platforms Container */
+.Platforms {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Platforms List */
+.Platforms_items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.Platforms_items::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Platform Styling */
+.individual_platform {
+  flex: 0 0 auto;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Platform Content */
+.platform_contents {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+}
+
+/* Icons */
+.Platforms_Icons {
+  height: 25px;
+  width: auto;
+  filter: grayscale(1);
+  transition: filter 0.2s ease-in-out;
+}
+
+.individual_platform:hover .Platforms_Icons {
+  filter: grayscale(0);
+}
+
+/* Platform Title */
+.Platform_title {
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Fading Effect */
+.fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Left Fade */
+.fade-left {
+  left: 250px;
+  background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+/* Right Fade */
+.fade-right {
+  right: 250px;
+  background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+@media screen and (max-width: 1300px) {
+  .Short_Discription_div .discription_content {
+    width: 100%;
+  }
+
+  .fade-left {
+    left: 50px;
+  }
+
+  /* Right Fade */
+  .fade-right {
+    right: 50px
+  }
+  .Hero_content_div {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Hero_content_div {
+    width: 80%;
+  }
+  .fade {
+    width: 100px;
+  }
+  .fade-left {
+    left: 0;
+  }
+
+  /* Right Fade */
+  .fade-right {
+    right: 0;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Hero_content_div {
+    width: 90%;
+    margin-top: -30%;
+  }
+  .Button_Group_div button {
+    width: 180px;
+    justify-content: space-evenly;
+  }
+  .Short_Discription_div {
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+   
+  }
+  .Developer_Name_div .Name_content {
+    font-size: 50px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 568px) {
+  .Hero_content_div {
+    width: 100%;
+  }
+}

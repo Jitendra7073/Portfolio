@@ -1,0 +1,78 @@
+/* FAQ Container */
+.faq-container {
+    margin: 40px auto;
+    border-radius: 12px;
+  }
+  
+  /* FAQ Title */
+  .faq-title {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    word-spacing: 1px;
+    font-weight: bold;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ List */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Individual FAQ Item */
+  .faq-item {
+    background: var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--gray-border);
+
+  }
+  
+  /* FAQ Question */
+  .faq-question {
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    word-spacing: 1px;
+    color: var(--primary-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+
+  /* Arrow Animation */
+  .arrow {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(180deg);
+  }
+  
+  .arrow.open {
+    transform: rotate(0deg);
+  }
+  
+  /* FAQ Answer */
+  .faq-answer-container {
+    overflow: hidden;
+  }
+  
+  .faq-answer {
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    word-spacing: 1px;
+    line-height: 25px;
+    color: var(--primary-text);
+  }
+  

@@ -1,0 +1,17 @@
+
+.throught_style{
+    display: flex;
+    flex-direction: column;
+
+}
+.throught_discription{
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 33px;
+}
+@media screen and (max-width:768px) {
+    .throught_style, .discription_content{
+        width: 100%;
+        text-align: justify;
+    }
+}
