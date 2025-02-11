@@ -22,7 +22,7 @@ const DiscussionBoard = () => {
   // 📌 Fetch messages when component mounts
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/messages")
+      .get("https://portfolio-backend-bnkc.onrender.com/api/messages")
       .then((response) => setMessages(response.data))
       .catch(() => toast.error("Failed to fetch messages"));
   }, []);
@@ -44,7 +44,7 @@ const DiscussionBoard = () => {
     setIsSendingOtp(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/messages/send-otp",
+        "https://portfolio-backend-bnkc.onrender.com/api/messages/send-otp",
         {
           user: userData.user,
           email: userData.email,
@@ -71,7 +71,7 @@ const DiscussionBoard = () => {
     setIsVerifyingOtp(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/messages/verify-otp",
+        "https://portfolio-backend-bnkc.onrender.com/api/messages/verify-otp",
         {
           email: userData.email,
           otp: otp,
@@ -83,7 +83,7 @@ const DiscussionBoard = () => {
 
       // ✅ Fetch updated messages from backend
       axios
-        .get("http://localhost:5000/api/messages")
+        .get("https://portfolio-backend-bnkc.onrender.com/api/messages")
         .then((response) => setMessages(response.data));
 
       // ✅ Reset input fields after successful submission
