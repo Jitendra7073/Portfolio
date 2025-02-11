@@ -19,10 +19,13 @@ const DiscussionBoard = () => {
   const [isSendingOtp, setIsSendingOtp] = useState(false);
   const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
 
+  const API_BASE_URL = "https://portfolio-backend-bnkc.onrender.com";
+
+  
   // 📌 Fetch messages when component mounts
   useEffect(() => {
     axios
-      .get("https://portfolio-backend-bnkc.onrender.com/api/messages")
+      .get(`${API_BASE_URL}/api/messages`)
       .then((response) => setMessages(response.data))
       .catch(() => toast.error("Failed to fetch messages"));
   }, []);
@@ -44,7 +47,7 @@ const DiscussionBoard = () => {
     setIsSendingOtp(true);
     try {
       const response = await axios.post(
-        "https://portfolio-backend-bnkc.onrender.com/api/messages/send-otp",
+        `${API_BASE_URL}/api/messages/send-otp`,
         {
           user: userData.user,
           email: userData.email,
@@ -71,7 +74,7 @@ const DiscussionBoard = () => {
     setIsVerifyingOtp(true);
     try {
       const response = await axios.post(
-        "https://portfolio-backend-bnkc.onrender.com/api/messages/verify-otp",
+       `${API_BASE_URL}/api/messages/verify-otp`,
         {
           email: userData.email,
           otp: otp,
@@ -83,7 +86,7 @@ const DiscussionBoard = () => {
 
       // ✅ Fetch updated messages from backend
       axios
-        .get("https://portfolio-backend-bnkc.onrender.com/api/messages")
+        .get(`${API_BASE_URL}/api/messages`)
         .then((response) => setMessages(response.data));
 
       // ✅ Reset input fields after successful submission
