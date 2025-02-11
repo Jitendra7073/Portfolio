@@ -221,7 +221,7 @@ const Home_Skills = () => {
             return (
               <div className="skill_card" key={index}>
                 <div className="skill_card_icon">
-                  <img src={source.icon} alt="" />
+                  <img src={source.icon} alt="" loading="lazy"/>
                 </div>
                 <div className="skill_card_language">
                   <span>{source.title}</span>
