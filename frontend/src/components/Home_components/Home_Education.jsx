@@ -36,11 +36,11 @@ const Home_Education = () => {
             return (
               <div className="Education_data">
                 <div className="background_images">
-                  <img src={Background} alt="" />
+                  <img src={Background} alt="" loading="lazy"/>
                 </div>
                 <div className="content_over_background">
                   <div className="Education_Image">
-                    <img src={source.tag} alt="" />
+                    <img src={source.tag} alt="" loading="lazy"/>
                   </div>
                   <div className="Education_details">
                     <span>
