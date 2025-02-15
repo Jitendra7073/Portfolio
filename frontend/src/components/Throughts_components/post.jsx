@@ -18,8 +18,8 @@ const DiscussionBoard = () => {
   const [isSendingOtp, setIsSendingOtp] = useState(false);
   const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
 
-  // const API_BASE_URL = "https://portfolio-backend-bnkc.onrender.com";
-  const API_BASE_URL = "http://localhost:5000";
+  const API_BASE_URL = "https://portfolio-backend-bnkc.onrender.com";
+  // const API_BASE_URL = "http://localhost:5000";
 
   // 📌 Fetch messages when component mounts
   useEffect(() => {
