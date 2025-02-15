@@ -61,29 +61,18 @@ router.post("/approve-message", async (req, res) => {
   }
 });
 
-// Handle Like Functionality
+// handle likes
 router.post("/like/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { userIp } = req.body; // Get User IP from request body
-
-    if (!userIp) {
-      return res.status(400).json({ error: "User IP is required" });
-    }
-
     const message = await Message.findById(id);
+
     if (!message) {
       return res.status(404).json({ error: "Message not found" });
     }
 
-    if (message.likedBy.includes(userIp)) {
-      return res
-        .status(400)
-        .json({ error: "You have already liked this message" });
-    }
-
+    // ✅ Increase like count
     message.likes += 1;
-    message.likedBy.push(userIp);
     await message.save();
 
     res.status(200).json({ success: true, likes: message.likes });
@@ -99,11 +88,10 @@ router.get("/", async (req, res) => {
       createdAt: -1,
     });
 
-    // Attach likedByUser field based on stored IPs
-    const userIp = req.ip;
+    const userId = req.query.userId; // Get User ID from request query
     const updatedMessages = messages.map((msg) => ({
       ...msg.toObject(),
-      likedByUser: msg.likedBy.includes(userIp),
+      likedByUser: msg.likedBy.includes(userId), // Check if the user liked it
     }));
 
     res.json(updatedMessages);
