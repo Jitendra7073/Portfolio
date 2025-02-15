@@ -112,7 +112,7 @@ const ProjectPopup = ({ project, togglePopup }) => (
           </Link>
         </div>
         <div className="popup_image">
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title} loading="lazy"/>
         </div>
         <div className="project_discription">
           <p>{project.description}</p>

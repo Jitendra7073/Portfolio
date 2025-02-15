@@ -1,0 +1,148 @@
+@import "../../common_css/Colors/colors.css";
+@import "../../common_css/Font/font.css";
+.admin_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  height: 50vh;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  overflow: hidden;
+}
+.admin_login {
+  background-color: var(--primary-color);
+  padding: 20px;
+  border: 2px solid var(--gray-border);
+  border-radius: 5px;
+  color: var(--primary-text);
+  text-align: center;
+}
+.admin_heading {
+  font-size: 30px;
+  letter-spacing: 0.8px;
+  word-wrap: break-word;
+  color: var(--primary-text);
+}
+.admin_login_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.admin_login_form input {
+  width: 500px;
+  height: 45px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 2px solid var(--gray-border);
+  background-color: var(--secondry-color);
+  font-size: 18px;
+  color: var(--primary-text);
+}
+.admin_login_form button {
+  height: 45px;
+  border: 2px solid var(--green-border);
+  background-color: var(--button-background);
+  color: var(--primary-text);
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  word-wrap: break-word;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin_view_section {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 10px;
+}
+.heading_logout {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout_button button {
+  height: 45px;
+  width: 200px;
+  border: 2px solid var(--green-border);
+  background-color: var(--button-background);
+  color: var(--primary-text);
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  word-wrap: break-word;
+  font-weight: 600;
+  cursor: pointer;
+}
+.user_info_section {
+  width: 50%;
+  color: white;
+  background-color: var(--secondry-color);
+  border: 2px solid var(--gray-border);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.user_data {
+  display: flex;
+  justify-content: space-between;
+  color: var(--button-hover);
+}
+
+.Approved {
+  color: var(--button-hover);
+  margin-left: 10px;
+}
+.Pending {
+  color: rgb(235, 91, 91);
+  margin-left: 10px;
+}
+.approve_delete_button {
+  height: 30px;
+  border: 2px solid var(--green-border);
+  background-color: var(--button-background);
+  color: var(--primary-text);
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  word-wrap: break-word;
+  font-weight: 600;
+  cursor: pointer;
+}
+.user_message {
+  line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .admin_section {
+    width: 100%;
+  }
+  .admin_login {
+    width: 100%;
+  }
+
+  .admin_login_form input {
+    width: 100%;
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+  }
+  .admin_view_section {
+    margin: 10px;
+  }
+  .heading_logout{
+    width: 100%;
+  }
+  .user_info_section{
+    max-width: 90%;
+    width: 100%;
+  } 
+}

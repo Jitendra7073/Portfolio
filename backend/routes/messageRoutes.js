@@ -61,11 +61,52 @@ router.post("/approve-message", async (req, res) => {
   }
 });
 
-// 📌 Step 4: Fetch Approved Messages
+// Handle Like Functionality
+router.post("/like/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { userIp } = req.body; // Get User IP from request body
+
+    if (!userIp) {
+      return res.status(400).json({ error: "User IP is required" });
+    }
+
+    const message = await Message.findById(id);
+    if (!message) {
+      return res.status(404).json({ error: "Message not found" });
+    }
+
+    if (message.likedBy.includes(userIp)) {
+      return res
+        .status(400)
+        .json({ error: "You have already liked this message" });
+    }
+
+    message.likes += 1;
+    message.likedBy.push(userIp);
+    await message.save();
+
+    res.status(200).json({ success: true, likes: message.likes });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to like message" });
+  }
+});
+
+// Fetch Approved Messages with Like Status
 router.get("/", async (req, res) => {
   try {
-    const messages = await Message.find({ isApproved: true }).sort({ createdAt: -1 });
-    res.json(messages);
+    const messages = await Message.find({ isApproved: true }).sort({
+      createdAt: -1,
+    });
+
+    // Attach likedByUser field based on stored IPs
+    const userIp = req.ip;
+    const updatedMessages = messages.map((msg) => ({
+      ...msg.toObject(),
+      likedByUser: msg.likedBy.includes(userIp),
+    }));
+
+    res.json(updatedMessages);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch messages" });
   }

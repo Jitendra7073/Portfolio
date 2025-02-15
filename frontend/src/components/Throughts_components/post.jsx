@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import "../../assets/css/components_css/Throught_Post.css";
 import { ToastContainer, toast } from "react-toastify";
-import "../../assets/css/components_css/Post.css";
-
 import WhySuggection from "../Throughts_components/Why_Suggetion";
+// css files
+import "../../assets/css/components_css/Throught_Post.css";
+import "../../assets/css/components_css/Post.css";
+// like icons
+import { FcLike } from "react-icons/fc"; // red heart icon
+import { AiOutlineHeart } from "react-icons/ai"; // White heart icon
 
 const DiscussionBoard = () => {
   const [messages, setMessages] = useState([]);
@@ -19,10 +22,13 @@ const DiscussionBoard = () => {
   const [isSendingOtp, setIsSendingOtp] = useState(false);
   const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
 
+  const API_BASE_URL = "https://portfolio-backend-bnkc.onrender.com";
+  // const Local_URL = "http://localhost:5000";
+
   // 📌 Fetch messages when component mounts
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/messages")
+      .get(`${API_BASE_URL}/api/messages`)
       .then((response) => setMessages(response.data))
       .catch(() => toast.error("Failed to fetch messages"));
   }, []);
@@ -44,7 +50,7 @@ const DiscussionBoard = () => {
     setIsSendingOtp(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/messages/send-otp",
+        `${API_BASE_URL}/api/messages/send-otp`,
         {
           user: userData.user,
           email: userData.email,
@@ -71,7 +77,7 @@ const DiscussionBoard = () => {
     setIsVerifyingOtp(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/messages/verify-otp",
+        `${API_BASE_URL}/api/messages/verify-otp`,
         {
           email: userData.email,
           otp: otp,
@@ -83,7 +89,7 @@ const DiscussionBoard = () => {
 
       // ✅ Fetch updated messages from backend
       axios
-        .get("http://localhost:5000/api/messages")
+        .get(`${API_BASE_URL}/api/messages`)
         .then((response) => setMessages(response.data));
 
       // ✅ Reset input fields after successful submission
@@ -94,6 +100,56 @@ const DiscussionBoard = () => {
       toast.error(error.response?.data?.error || "OTP verification failed");
     }
     setIsVerifyingOtp(false);
+  };
+
+  // 📌 Fetch messages and their like status when component mounts
+
+  useEffect(() => {
+    axios
+      .get(`${API_BASE_URL}/api/messages`)
+      .then((response) => {
+        setMessages(response.data);
+      })
+      .catch(() => toast.error("Failed to fetch messages"));
+  }, []);
+
+  // Fetch User IP Address
+  const getUserIp = async () => {
+    try {
+      const response = await axios.get("https://api64.ipify.org?format=json");
+      return response.data.ip;
+    } catch {
+      return null;
+    }
+  };
+
+  // Handle Like Functionality
+  const handleLike = async (messageId) => {
+    const userIp = await getUserIp();
+    if (!userIp) {
+      toast.error("Failed to get IP Address.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/api/messages/like/${messageId}`,
+        { userIp }
+      );
+
+      if (response.data.success) {
+        setMessages((prevMessages) =>
+          prevMessages.map((msg) =>
+            msg._id === messageId
+              ? { ...msg, likes: response.data.likes, likedByUser: true }
+              : msg
+          )
+        );
+        localStorage.setItem(`liked_${messageId}`, "true"); // Store in LocalStorage
+      }
+    } catch (error) {
+      toast.error("You have already liked this message.");
+    }
   };
 
   return (
@@ -199,11 +255,22 @@ const DiscussionBoard = () => {
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                padding: "0 10px",
+                padding: "0",
               }}
             >
               <strong>{msg.user}</strong>
-              <strong>{msg.email}</strong>
+              <div className="like-comments">
+                {/* Show red heart if liked, else white heart */}
+                {msg.likedByUser || localStorage.getItem(`liked_${msg._id}`) ? (
+                  <FcLike className="liked" />
+                ) : (
+                  <AiOutlineHeart
+                    className="unliked"
+                    onClick={() => handleLike(msg._id)}
+                  />
+                )}
+                <span>{msg.likes || 0}</span>
+              </div>
             </div>
             <p>{msg.text}</p>
           </div>

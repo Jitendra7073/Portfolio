@@ -17,7 +17,6 @@ const FAQ = () => {
       answer:
         "I believe the best way to grow is by listening to real users. Feedback helps me understand what people expect, improve my skills, and create more user-friendly solutions. It also encourages collaboration and innovation, making my portfolio more interactive and community-driven. 🚀",
     },
-
   ];
 
   const toggleFAQ = (index) => {
@@ -33,7 +32,7 @@ const FAQ = () => {
             <button className="faq-question" onClick={() => toggleFAQ(index)}>
               {faq.question}
               <span className={`arrow ${activeIndex === index ? "open" : ""}`}>
-                <IoIosArrowUp/>
+                <IoIosArrowUp />
               </span>
             </button>
 
