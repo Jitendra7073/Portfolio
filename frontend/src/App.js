@@ -42,14 +42,14 @@ function App() {
     return () => clearTimeout(timeout);
   }, [token]);
 
-  // Disable right-click
-  // useEffect(() => {
-  //   const disableRightClick = (event) => event.preventDefault();
-  //   document.addEventListener("contextmenu", disableRightClick);
-  //   return () => {
-  //     document.removeEventListener("contextmenu", disableRightClick);
-  //   };
-  // }, []);
+  Disable right-click
+  useEffect(() => {
+    const disableRightClick = (event) => event.preventDefault();
+    document.addEventListener("contextmenu", disableRightClick);
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []);
 
   return (
     <BrowserRouter>
