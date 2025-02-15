@@ -42,7 +42,7 @@ function App() {
     return () => clearTimeout(timeout);
   }, [token]);
 
-  Disable right-click
+  // Disable right-click
   useEffect(() => {
     const disableRightClick = (event) => event.preventDefault();
     document.addEventListener("contextmenu", disableRightClick);
