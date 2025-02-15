@@ -1,4 +1,3 @@
-/* Background Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -64,7 +63,7 @@
   display: flex;
   width: 100%;
 }
-.input_button_group .popup-button {
+.input_button_group .popup-button-window{
   background: var(--button-background);
   border: 2px solid var(--green-border);
   border-radius: 10px;
@@ -97,13 +96,13 @@
   .input_button_group input {
     width: auto;
   }
-  .input_button_group .popup-button {
+  .input_button_group .popup-button-window {
     width: 100%;
     height: 45px;
   }
 }
 
-.popup-button:disabled {
+.popup-button-window:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

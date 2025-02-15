@@ -170,6 +170,7 @@ const DiscussionBoard = () => {
                 }
                 className="popup-input"
               />
+              <div className="input_button_group">
               <input
                 type="email"
                 placeholder="Your Email"
@@ -181,11 +182,12 @@ const DiscussionBoard = () => {
               />
               <button
                 onClick={handleUserSubmit}
-                className="popup-button"
+                className="popup-button-window"
                 disabled={isSendingOtp}
               >
                 {isSendingOtp ? "Sending..." : "Send OTP"}
               </button>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -203,6 +205,7 @@ const DiscussionBoard = () => {
             transition={{ type: "spring", stiffness: 100, damping: 10 }}
           >
             <h3 className="popup-title">Enter OTP</h3>
+            <div className="input_button_group">
             <input
               type="text"
               placeholder="Enter OTP"
@@ -213,10 +216,11 @@ const DiscussionBoard = () => {
             <button
               onClick={handleOtpSubmit}
               disabled={isVerifyingOtp}
-              className="popup-button"
+              className="popup-button-window"
             >
               {isVerifyingOtp ? "Verifying..." : "Verify OTP"}
             </button>
+            </div>
           </motion.div>
         </div>
       )}
