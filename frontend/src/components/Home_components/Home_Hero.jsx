@@ -66,19 +66,26 @@ const hero = () => {
           </p>
         </div>
         <div className="Button_Group_div">
-          <Link to="/connect"><button className="Connect_button">
-            {" "}
-            <span>
-              <FaRegHandshake className="react_icons" />
-            </span>
-            <span>Let's Connect</span>
-          </button></Link>
-          <button className="Resume_button" title="not yet uploaded">
-            <span>
-              <GrDocumentPdf className="react_icons" />
-            </span>
-            <span>View Resume</span>
-          </button>
+          <Link to="/connect">
+            <button className="Connect_button">
+              {" "}
+              <span>
+                <FaRegHandshake className="react_icons" />
+              </span>
+              <span>Let's Connect</span>
+            </button>
+          </Link>
+          <Link
+            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1744277525/Resume_qewkip.pdf"
+            target="_blank"
+          >
+            <button className="Resume_button">
+              <span>
+                <GrDocumentPdf className="react_icons" />
+              </span>
+              <span>View Resume</span>
+            </button>
+          </Link>
         </div>
       </div>
 

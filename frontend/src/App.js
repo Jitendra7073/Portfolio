@@ -43,13 +43,13 @@ function App() {
   }, [token]);
 
   // Disable right-click
-  // useEffect(() => {
-  //   const disableRightClick = (event) => event.preventDefault();
-  //   document.addEventListener("contextmenu", disableRightClick);
-  //   return () => {
-  //     document.removeEventListener("contextmenu", disableRightClick);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const disableRightClick = (event) => event.preventDefault();
+    document.addEventListener("contextmenu", disableRightClick);
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []);
 
   return (
     <BrowserRouter>

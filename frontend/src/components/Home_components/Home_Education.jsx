@@ -46,9 +46,9 @@ const Home_Education = () => {
                     <span>
                       📍{source.location} <br /> {source.more}
                     </span>
-                    <span>📊 {source.marks}</span>
+                    <span>{source.marks}</span>
                     <span>{source.state}</span>
-                  </div>    
+                  </div>
                 </div>
               </div>
             );
