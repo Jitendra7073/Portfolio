@@ -63,7 +63,7 @@
   display: flex;
   width: 100%;
 }
-.input_button_group .popup-button-window{
+.input_button_group .popup-button-window {
   background: var(--button-background);
   border: 2px solid var(--green-border);
   border-radius: 10px;
@@ -86,7 +86,6 @@
   color: var(--primary-text);
   cursor: pointer;
 }
-
 
 @media screen and (max-width: 468px) {
   .input_button_group {
@@ -124,5 +123,35 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* loading css bar */
+.no-messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 50px 0;
+}
+.loader {
+  height: 4px;
+  width: 20%;
+  --c: no-repeat linear-gradient(var(--green-border) 0 0);
+  background: var(--c), var(--c), var(--button-background_gray);
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+  border-radius: 10px;
+}
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
   }
 }

@@ -171,22 +171,22 @@ const DiscussionBoard = () => {
                 className="popup-input"
               />
               <div className="input_button_group">
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={userData.email}
-                onChange={(e) =>
-                  setUserData({ ...userData, email: e.target.value })
-                }
-                className="popup-input"
-              />
-              <button
-                onClick={handleUserSubmit}
-                className="popup-button-window"
-                disabled={isSendingOtp}
-              >
-                {isSendingOtp ? "Sending..." : "Send OTP"}
-              </button>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={userData.email}
+                  onChange={(e) =>
+                    setUserData({ ...userData, email: e.target.value })
+                  }
+                  className="popup-input"
+                />
+                <button
+                  onClick={handleUserSubmit}
+                  className="popup-button-window"
+                  disabled={isSendingOtp}
+                >
+                  {isSendingOtp ? "Sending..." : "Send OTP"}
+                </button>
               </div>
             </div>
           </motion.div>
@@ -206,20 +206,20 @@ const DiscussionBoard = () => {
           >
             <h3 className="popup-title">Enter OTP</h3>
             <div className="input_button_group">
-            <input
-              type="text"
-              placeholder="Enter OTP"
-              className="popup-input"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-            />
-            <button
-              onClick={handleOtpSubmit}
-              disabled={isVerifyingOtp}
-              className="popup-button-window"
-            >
-              {isVerifyingOtp ? "Verifying..." : "Verify OTP"}
-            </button>
+              <input
+                type="text"
+                placeholder="Enter OTP"
+                className="popup-input"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+              />
+              <button
+                onClick={handleOtpSubmit}
+                disabled={isVerifyingOtp}
+                className="popup-button-window"
+              >
+                {isVerifyingOtp ? "Verifying..." : "Verify OTP"}
+              </button>
             </div>
           </motion.div>
         </div>
@@ -227,25 +227,34 @@ const DiscussionBoard = () => {
 
       {/* 📌 Messages Section */}
       <div className="messages">
-        {messages.map((msg) => (
-          <div key={msg._id} className="message-card">
-            <div className="message-header" style={{display:"flex", justifyContent:"space-between"}}>
-              <strong>{msg.user}</strong>
-              <div className="like-comments">
-                {localStorage.getItem(`liked_${msg._id}`) ? (
-                  <FcLike className="liked" />
-                ) : (
-                  <AiOutlineHeart
-                    className="unliked"
-                    onClick={() => handleLike(msg._id)}
-                  />
-                )}
-                <span>{msg.likes || 0}</span>
+        {messages.length > 0 ? (
+          messages.map((msg) => (
+            <div key={msg._id} className="message-card">
+              <div
+                className="message-header"
+                style={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <strong>{msg.user}</strong>
+                <div className="like-comments">
+                  {localStorage.getItem(`liked_${msg._id}`) ? (
+                    <FcLike className="liked" />
+                  ) : (
+                    <AiOutlineHeart
+                      className="unliked"
+                      onClick={() => handleLike(msg._id)}
+                    />
+                  )}
+                  <span>{msg.likes || 0}</span>
+                </div>
               </div>
+              <p>{msg.text}</p>
             </div>
-            <p>{msg.text}</p>
+          ))
+        ) : (
+          <div className="no-messages">
+            <div className="loader"></div>
           </div>
-        ))}
+        )}
       </div>
 
       <ToastContainer />
