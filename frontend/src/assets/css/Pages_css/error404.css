@@ -1,0 +1,10 @@
+.Error404-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.Error404-container img {
+  max-width: 100%;
+  height: auto;
+}

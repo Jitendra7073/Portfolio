@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Error404 from "../assets/Images/svg/error404.svg";
+import "../assets/css/Pages_css/error404.css";
 
 const Error = () => {
   return (
-    <div>
-      <h1 style={{color:'white'}}>404 Error</h1>
+    <div className="Error404-container">
+      <img src={Error404} alt="404 Error" />
     </div>
-  )
-}
+  );
+};
 
-export default Error
+export default Error;
