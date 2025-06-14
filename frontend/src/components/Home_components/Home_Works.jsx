@@ -3,6 +3,7 @@ import "../../assets/css/components_css/Home_Projects.css";
 import {
   Freelncing,
   Hackathon,
+  GDG,
 } from "../../assets/Images/Project_&_experience";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -28,13 +29,13 @@ const projects = [
     image: Hackathon,
   },
   {
-    title: "🚧 GDG on Campus Solution Challenge",
-    url: "",
-    technologies: "Ongoing (Expected: Jun 2025) | [Google Developer Group]",
+    title: "Google Developer Group (GDG) Hackathon | 📅 [Jun, 2025]",
+    url: "https://classmantra.netlify.app/",
+    technologies:
+      "React.js, Node js, MongoDB, Firebase, Firebase Authentication (Google Sign-In), Gemini API Integration",
     description:
-      "Problem statement: Overburdened Teachers and the Need for Personalized Feedback",
-    image:
-      "https://h2svision.github.io/publicAssets/vision/H2S_Gradient_Logo.png",
+      "Developed a full-stack web app using React, Node.js, MongoDB, Firebase (Google Auth), and Gemini API during the GDG Hackathon. Successfully solved the given problem statement, though not selected due to others implementing extra features beyond the scope.",
+    image: GDG,
   },
 ];
 

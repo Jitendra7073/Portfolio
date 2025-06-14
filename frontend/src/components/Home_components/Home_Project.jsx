@@ -1,12 +1,28 @@
 import React, { useState } from "react";
 import "../../assets/css/components_css/Home_Projects.css";
-import { Installify,SpeechToText,Furniture,ATM,LMS,PowerBI } from "../../assets/Images/Project_&_experience";
+import {
+  Installify,
+  SpeechToText,
+  Furniture,
+  ATM,
+  LMS,
+  PowerBI,
+  CoreMindsslution,
+} from "../../assets/Images/Project_&_experience";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PopupSounds from "../../assets/sounds/open.wav";
 
 // Project Data (Refactored to avoid duplication)
 const projects = [
+  {
+    title: "Coreminds Solution Pvt. Ltd.",
+    url: "https://www.coremindssolution.com/",
+    technologies: "React JS, CSS, JavaScript, Node.js, Express and  Github",
+    description:
+      "Developed a professional and responsive website for Coreminds Solution Pvt. Ltd., an IT service company. The website showcases the company’s services, technologies, team, and mission to establish a strong online presence. Integrated a user-friendly contact system allowing potential clients to directly connect with the company. 🚀",
+    image: CoreMindsslution,
+  },
   {
     title: "Installify – Installation Guide Website",
     url: "https://github.com/Jitendra7073/Installation_guidance",
@@ -16,12 +32,12 @@ const projects = [
     image: Installify,
   },
   {
-    title: "speech to text converte",
-    url: "https://github.com/Jitendra7073/Speech_to_text",
-    technologies: "JavaScript, React.js and CSS ( for styling ).",
+    title: "flipmart sales dashboard",
+    url: "",
+    technologies: "Excel and Power BI",
     description:
-      "I built a speech-to-text converter using React that quickly turns spoken words into text in real time. It has a simple, easy-to-use design and lets users copy the text with one click. Perfect for anyone who needs fast and accurate transcription. 🚀",
-    image: SpeechToText,
+      "I created a Power BI dashboard for Flipmart Sales using Excel, focusing on data preprocessing, cleaning, managing data, and fetching target rows. It helps visualize sales insights effectively. 🚀",
+    image: PowerBI,
   },
   {
     title: "Modular Furniture Website",
@@ -30,6 +46,14 @@ const projects = [
     description:
       "I created a modular furniture website where users can explore various furniture designs, order custom pieces, and search for new designs. It features different kitchen and room setups with real-life examples, making it easy to find and customize furniture. 🚀",
     image: Furniture,
+  },
+  {
+    title: "speech to text converte",
+    url: "https://github.com/Jitendra7073/Speech_to_text",
+    technologies: "JavaScript, React.js and CSS ( for styling ).",
+    description:
+      "I built a speech-to-text converter using React that quickly turns spoken words into text in real time. It has a simple, easy-to-use design and lets users copy the text with one click. Perfect for anyone who needs fast and accurate transcription. 🚀",
+    image: SpeechToText,
   },
   {
     title: "Automated Teller Machine (ATM)",
@@ -46,14 +70,6 @@ const projects = [
     description:
       "I created a Library Management System in Python using loops, validation, OOP concepts, and file handling. It allows users to view available books, add new books, and check the total number of books efficiently. 🚀",
     image: LMS,
-  },
-  {
-    title: "flipmart sales dashboard",
-    url: "",
-    technologies: "Excel and Power BI",
-    description:
-      "I created a Power BI dashboard for Flipmart Sales using Excel, focusing on data preprocessing, cleaning, managing data, and fetching target rows. It helps visualize sales insights effectively. 🚀",
-    image: PowerBI,
   },
 ];
 
@@ -110,7 +126,8 @@ const ProjectCard = ({ project, onClick }) => (
       </div>
       <div className="project_technologies">
         <p>
-          <span>Languages & Technologies:</span><br/> {project.technologies}
+          <span>Languages & Technologies:</span>
+          <br /> {project.technologies}
         </p>
       </div>
     </div>
@@ -135,7 +152,7 @@ const ProjectPopup = ({ project, togglePopup }) => (
           </Link>
         </div>
         <div className="popup_image">
-          <img src={project.image} alt={project.title} loading="lazy"/>
+          <img src={project.image} alt={project.title} loading="lazy" />
         </div>
         <div className="project_discription">
           <p>{project.description}</p>

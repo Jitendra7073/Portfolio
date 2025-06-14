@@ -76,7 +76,7 @@ const hero = () => {
             </button>
           </Link>
           <Link
-            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1744277525/Resume_qewkip.pdf"
+            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1749912201/g4hvlajeddej1kjq2jdz.pdf"
             target="_blank"
           >
             <button className="Resume_button">
