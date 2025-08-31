@@ -21,7 +21,7 @@ const Home_Education = () => {
       tag: Degree,
       location: "Uka Tarsadia university,bardoli [Present]",
       more: "",
-      marks: "CGPA: 8.98",
+      marks: "CGPA: 8.99",
       state: "[surat, Gujarat]",
     },
   ];

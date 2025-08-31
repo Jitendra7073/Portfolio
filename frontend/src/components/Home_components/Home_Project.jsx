@@ -32,14 +32,6 @@ const projects = [
     image: Installify,
   },
   {
-    title: "flipmart sales dashboard",
-    url: "",
-    technologies: "Excel and Power BI",
-    description:
-      "I created a Power BI dashboard for Flipmart Sales using Excel, focusing on data preprocessing, cleaning, managing data, and fetching target rows. It helps visualize sales insights effectively. 🚀",
-    image: PowerBI,
-  },
-  {
     title: "Modular Furniture Website",
     url: "https://github.com/Jitendra7073/Furniture_website",
     technologies: "Javascript, HTML, CSS, PHP and Bootstrap.",

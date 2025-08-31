@@ -4,6 +4,7 @@ import {
   Freelncing,
   Hackathon,
   GDG,
+  SpaceMod,
 } from "../../assets/Images/Project_&_experience";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -36,6 +37,15 @@ const projects = [
     description:
       "Developed a full-stack web app using React, Node.js, MongoDB, Firebase (Google Auth), and Gemini API during the GDG Hackathon. Successfully solved the given problem statement, though not selected due to others implementing extra features beyond the scope.",
     image: GDG,
+  },
+  {
+    title: "SpaceMod: Modular Furniture Website (On-Going)",
+    url: "https://spacemod.in/",
+    technologies:
+      "React.js, JavaScript, Styled-Components, Node.js, Express.js, MongoDB",
+    description:
+      "Developing a full-stack application for SpaceMod, a modular furniture company. The site features a front-end showcasing past and current projects, customer testimonials, and an integrated admin panel for full data management of the entire website. This project is currently in development.",
+    image: SpaceMod,
   },
 ];
 

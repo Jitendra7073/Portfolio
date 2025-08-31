@@ -10,3 +10,4 @@ export { default as CoreMindsslution } from ".//coremindsSolution.png";
 export { default as Freelncing } from "./freelncing.png";
 export { default as Hackathon } from "./hackathon.png";
 export { default as GDG } from "./GDG.png";
+export { default as SpaceMod } from "./spacemod.png";

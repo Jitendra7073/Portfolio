@@ -58,10 +58,10 @@ const hero = () => {
         </div>
         <div className="Short_Discription_div">
           <p className="discription_content">
-            <span className="High_Lighted_text">Hello, World!</span> I'm an AI &
-            ML enthusiast 🤖, debugging life one line at a time!
+            <span className="High_Lighted_text">Hello, Everyone!</span> I'm an
+            AI & ML enthusiast 🤖, debugging life one line at a time!
             <span className="High_Lighted_text">{" <code>"}</span> Full-Stack
-            Dev | Data Explorer | Bug Fixer (Sometimes Bug Creator){" "}
+            Dev | Data Explorer | Bug Fixer
             <span className="High_Lighted_text">{"</code>"}</span>
           </p>
         </div>
@@ -76,7 +76,7 @@ const hero = () => {
             </button>
           </Link>
           <Link
-            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1749912201/g4hvlajeddej1kjq2jdz.pdf"
+            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1756622283/JITENDRA_SUTHAR_uqmpzy.pdf"
             target="_blank"
           >
             <button className="Resume_button">
