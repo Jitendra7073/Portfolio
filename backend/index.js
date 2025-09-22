@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("./config/Database"); // Import DB connection
+const mongoose = require("./config/Database");
 const cors = require("cors");
 require("dotenv").config();
 
