@@ -7,6 +7,8 @@ const AdminLogin = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const API_BASE_URL = "https://portfolio-backend-bnkc.onrender.com";
@@ -14,7 +16,8 @@ const AdminLogin = ({ setToken }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError(""); // Clear any previous error
-
+    if (isLoading) return;
+    setIsLoading(true);
     try {
       const response = await fetch(`${API_BASE_URL}/admin/login`, {
         method: "POST",
@@ -34,6 +37,8 @@ const AdminLogin = ({ setToken }) => {
       navigate("/admin/messages"); // Redirect to dashboard
     } catch (err) {
       setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -49,15 +54,34 @@ const AdminLogin = ({ setToken }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={isLoading}
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
+          <div className="input_group">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              disabled={isLoading}
+            />
+            <button
+              type="button"
+              className="eye_toggle"
+              onClick={() => setShowPassword((v) => !v)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              disabled={isLoading}
+            >
+              {showPassword ? "🙈" : "👁️"}
+            </button>
+          </div>
+          <button type="submit" disabled={isLoading} className={isLoading ? "loading" : ""}>
+            {isLoading ? (
+              <span className="spinner_inline">Verifying credentials...</span>
+            ) : (
+              "Login"
+            )}
+          </button>
         </form>
       </div>
     </section>

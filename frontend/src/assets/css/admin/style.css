@@ -39,6 +39,33 @@
   font-size: 18px;
   color: var(--primary-text);
 }
+.admin_login_form .input_group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.admin_login_form .input_group input {
+  width: 100%;
+  padding-right: 44px;
+}
+.admin_login_form .input_group .eye_toggle {
+  position: absolute;
+  right: 8px;
+  height: 32px;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray-border);
+  background: var(--button-background);
+  color: var(--primary-text);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.admin_login_form .input_group .eye_toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .admin_login_form button {
   height: 45px;
   border: 2px solid var(--green-border);
@@ -51,6 +78,19 @@
   word-wrap: break-word;
   font-weight: 600;
   cursor: pointer;
+}
+.admin_login_form button.loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+.spinner_inline {
+  display: inline-block;
+  letter-spacing: 2px;
+  animation: pulse 1s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 .admin_view_section {

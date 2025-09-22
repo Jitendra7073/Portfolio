@@ -18,14 +18,6 @@ import {
 const hero = () => {
   const Platforms = [
     {
-      icons: Excel,
-      title: "Excel",
-    },
-    {
-      icons: Power_BI,
-      title: "PowerBI",
-    },
-    {
       icons: Visual_Studio_Code,
       title: "VS Code",
     },
@@ -33,17 +25,10 @@ const hero = () => {
       icons: Android_studio,
       title: "Android Studio",
     },
-    {
-      icons: IntelliJ_IDEA,
-      title: "IntelliJ IDEA",
-    },
+   
     {
       icons: Figma,
       title: "Figma",
-    },
-    {
-      icons: Auto_CAD,
-      title: "Auto CAD",
     },
     {
       icons: Canva,
