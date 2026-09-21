@@ -19,9 +19,9 @@ const Home_Education = () => {
     },
     {
       tag: Degree,
-      location: "Uka Tarsadia university,bardoli [Present]",
+      location: "Uka Tarsadia university,bardoli [2026]",
       more: "",
-      marks: "CGPA: 8.99",
+      marks: "CGPA: 9.19",
       state: "[surat, Gujarat]",
     },
   ];

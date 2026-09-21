@@ -11,7 +11,7 @@ const Header = () => {
   const NavLinks = [
     { title: "Home", Page: "/", target: "_self" },
     { title: "Connect", Page: "/connect", target: "_self" },
-    { title: "Thoughts", Page: "/Programmer_throughts", target: "_self" },
+    // { title: "Thoughts", Page: "/Programmer_throughts", target: "_self" },
     {
       title: "Github",
       Page: "https://github.com/Jitendra7073",

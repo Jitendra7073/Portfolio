@@ -39,7 +39,7 @@ const Contact = () => {
                 Porfolio
               </Link>
               ] / [
-              <Link to="mailto:jeetsuthar151@gmail.com" target="_blank">
+              <Link to="mailto:sutharjitendra529@gmail.com" target="_blank">
                 Email
               </Link>
               ] / [

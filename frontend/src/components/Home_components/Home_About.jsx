@@ -10,13 +10,17 @@ const Home_About = () => {
         </h4>
 
         <p>
-          <span className="hey_emoji">👋</span> I'm a final-year B.Tech (CSE)
-          student at Uka Tarsadia University. I’m passionate about building
-          smart solutions and making technology work like magic.
+          <span className="hey_emoji">👋</span> I'm a Full Stack Developer
+          with 1+ year of production experience, currently working at
+          EnactOn Technology while finishing my B.Tech (CSE) at Uka Tarsadia
+          University.
         </p>
         <p>
-          I explore AI, machine learning, and full-stack development—coding in
-          Python, C++, and more. You could say I speak multiple languages.
+          I design and ship full-stack features end-to-end—from system
+          design through deployment—and independently own a production
+          automation system serving millions of users. My day-to-day stack is
+          React.js, Node.js, and PostgreSQL, with a growing focus on AI
+          agents and agentic workflows.
         </p>
         <p>
           When I’m not debugging my life (or my code), you’ll probably find me

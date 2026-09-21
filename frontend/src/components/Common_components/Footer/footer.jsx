@@ -22,7 +22,7 @@ const FooterSection = () => {
     {
       icons: Email,
       title: "Email",
-      url: "mailto:jeetsuthar151@gmail.com",
+      url: "mailto:sutharjitendra529@gmail.com",
     },
     {
       icons: Linkdein,

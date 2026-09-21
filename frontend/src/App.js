@@ -58,7 +58,7 @@ function App() {
       </div>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/Programmer_throughts" element={<ProgrammerThroughts />} />
+        {/* <Route path="/Programmer_throughts" element={<ProgrammerThroughts />} /> */}
         <Route path="/connect" element={<Contact />} />
         <Route path="*" element={<NoPage />} />
         <Route

@@ -21,6 +21,36 @@ import PopupSounds from "../../assets/sounds/open.wav";
 // Project Data (Refactored to avoid duplication)
 const projects = [
   {
+    title: "SpendSync - Daily Expense Tracker",
+    codeUrl: "https://github.com/Jitendra7073/SpendSync",
+    technologies: "React.js, Node.js, Express.js, MongoDB",
+    description:
+      "A daily expense tracker application with automatic payment detection, helping users log and categorize spending without manual entry for every transaction.",
+    images: [
+      "/images/p1.jpeg",
+      "/images/p2.jpeg",
+      "/images/p3.jpeg",
+      "/images/p4.jpeg",
+      "/images/p5.jpeg",
+    ],
+  },
+  {
+    title: "CricOra - Cricket Scoring & Tournament Manager",
+    codeUrl: "https://github.com/Jitendra7073/CricOra-Scorebook-web",
+    technologies: "React.js, Node.js, Express.js, MongoDB",
+    description:
+      "A cricket scoring application to manage tournaments, teams, and innings, covering ball-by-ball scoring along with tournament and team management.",
+  },
+  {
+    title: "HSM - Home Service Management",
+    liveUrl: "https://homhelpers.vercel.app/auth/login",
+    codeUrl: "https://github.com/Jitendra7073/HSM-backend",
+    technologies: "React.js, Node.js, Express.js, MongoDB",
+    description:
+      "A home service management platform, similar to Urban Company, connecting customers with service providers for booking and managing home services.",
+    images: ["/images/h1.png", "/images/h2.png", "/images/h3.png", "/images/h4.png"],
+  },
+  {
     title: "SpaceMod: Modular Furniture Website",
     liveUrl: "https://spacemod.in/",
     codeUrl: "https://github.com/Jitendra7073/Spacemod",
@@ -61,22 +91,20 @@ const projects = [
       "Developed Installify, a website that provides step-by-step installation guides for various software and tools, making the process simple and efficient without switching between multiple sites. Used Docusaurus (Static Site Generator) to ensure fast performance, easy content management, and SEO optimization. 🚀",
     image: Installify,
   },
-  // {
-  //   title: "Coreminds Solution Pvt. Ltd.",
-  //   url: "https://www.coremindssolution.com/",
-  //   technologies: "React JS, CSS, JavaScript, Node.js, Express and  Github",
-  //   description:
-  //     "Developed a professional and responsive website for Coreminds Solution Pvt. Ltd., an IT service company. The website showcases the company’s services, technologies, team, and mission to establish a strong online presence. Integrated a user-friendly contact system allowing potential clients to directly connect with the company. 🚀",
-  //   image: CoreMindsslution,
-  // },
-  // {
-  //   title: "speech to text converte",
-  //   url: "https://github.com/Jitendra7073/Speech_to_text",
-  //   technologies: "JavaScript, React.js and CSS ( for styling ).",
-  //   description:
-  //     "I built a speech-to-text converter using React that quickly turns spoken words into text in real time. It has a simple, easy-to-use design and lets users copy the text with one click. Perfect for anyone who needs fast and accurate transcription. 🚀",
-  //   image: SpeechToText,
-  // },
+  {
+    title: "Coreminds Solution Pvt. Ltd.",
+    url: "https://www.coremindssolution.com/",
+    technologies: "React JS, CSS, JavaScript, Node.js, Express and  Github",
+    description:
+      "Developed a professional and responsive website for Coreminds Solution Pvt. Ltd., an IT service company. The website showcases the company’s services, technologies, team, and mission to establish a strong online presence. Integrated a user-friendly contact system allowing potential clients to directly connect with the company. 🚀",
+  },
+  {
+    title: "speech to text converte",
+    url: "https://github.com/Jitendra7073/Speech_to_text",
+    technologies: "JavaScript, React.js and CSS ( for styling ).",
+    description:
+      "I built a speech-to-text converter using React that quickly turns spoken words into text in real time. It has a simple, easy-to-use design and lets users copy the text with one click. Perfect for anyone who needs fast and accurate transcription. 🚀",
+  },
 ];
 
 const Home_Project = () => {
@@ -226,6 +254,38 @@ const TooltipButton = ({ className = "", message, children, onClick }) => {
   );
 };
 
+// Minimal self-contained image slider (avoids fighting 3rd-party slider DOM/CSS)
+const ImageSlider = ({ images, title }) => {
+  const [index, setIndex] = useState(0);
+  const prev = () => setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+
+  return (
+    <div className="popup_image">
+      <img src={images[index]} alt={`${title} screenshot ${index + 1}`} loading="lazy" />
+      {images.length > 1 && (
+        <>
+          <button type="button" className="slider_nav slider_nav_prev" onClick={prev} aria-label="Previous image">
+            ‹
+          </button>
+          <button type="button" className="slider_nav slider_nav_next" onClick={next} aria-label="Next image">
+            ›
+          </button>
+          <div className="slider_dots">
+            {images.map((_, i) => (
+              <span
+                key={i}
+                className={`slider_dot ${i === index ? "active" : ""}`}
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 // Project Popup Component
 const ProjectPopup = ({ project, togglePopup }) => (
   <div className="popup_overlay" onClick={togglePopup}>
@@ -243,9 +303,15 @@ const ProjectPopup = ({ project, togglePopup }) => (
             <p>{project.title}</p>
           </Link>
         </div>
-        <div className="popup_image">
-          <img src={project.image} alt={project.title} loading="lazy" />
-        </div>
+        {project.images ? (
+          <ImageSlider images={project.images} title={project.title} />
+        ) : (
+          project.image && (
+            <div className="popup_image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+            </div>
+          )
+        )}
         <div className="project_discription">
           <p>{project.description}</p>
         </div>

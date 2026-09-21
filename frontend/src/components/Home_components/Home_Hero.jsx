@@ -43,10 +43,11 @@ const hero = () => {
         </div>
         <div className="Short_Discription_div">
           <p className="discription_content">
-            <span className="High_Lighted_text">Hello, Everyone!</span> I'm an
-            AI & ML enthusiast 🤖, debugging life one line at a time!
+            <span className="High_Lighted_text">Hello, Everyone!</span> I'm a
+            Full Stack Developer at EnactOn Technology, debugging life one
+            line at a time!
             <span className="High_Lighted_text">{" <code>"}</span> Full-Stack
-            Dev | Data Explorer | Bug Fixer
+            Dev | React.js & Node.js | AI Agents
             <span className="High_Lighted_text">{"</code>"}</span>
           </p>
         </div>
@@ -61,7 +62,7 @@ const hero = () => {
             </button>
           </Link>
           <Link
-            to="https://res.cloudinary.com/dr2izxsrr/image/upload/v1756622283/JITENDRA_SUTHAR_uqmpzy.pdf"
+            to="https://res.cloudinary.com/sdda9qbd/image/upload/v1789990757/Jitendra_Suthar_Resume.pdf"
             target="_blank"
           >
             <button className="Resume_button">
