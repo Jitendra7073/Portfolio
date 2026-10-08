@@ -6,13 +6,9 @@ import { GrDocumentPdf } from "react-icons/gr";
 import { Link } from "react-router-dom";
 // Icons
 import {
-  Excel,
-  Power_BI,
   Visual_Studio_Code,
   Android_studio,
-  IntelliJ_IDEA,
   Figma,
-  Auto_CAD,
   Canva,
 } from "../../assets/Images/Icons";
 const hero = () => {

@@ -7,7 +7,6 @@ import Header from "./components/Common_components/Header";
 
 // Pages
 import Home from "./pages/Home";
-import ProgrammerThroughts from "./pages/Thoughts.jsx";
 import Contact from "./pages/Contact.jsx";
 import NoPage from "./pages/Error.jsx";
 import ScrollToTop from "./components/Common_components/scrollToTop.jsx";
